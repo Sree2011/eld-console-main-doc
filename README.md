@@ -25,7 +25,7 @@
      - Compute power using lambda and cost coefficients
      - Clamp power within [min_capacity, max_capacity]
    - Calculate total generated power
-   - Check if |total_power - demand| < tolerance:
+   - Check if $|total_power - demand| < tolerance$:
      - If yes, exit loop (converged)
      - Else, adjust lambda based on error
 
