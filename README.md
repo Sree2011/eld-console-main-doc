@@ -37,3 +37,28 @@
 7. **End**
 
 
+### Flowchart
+
+```mermaid
+flowchart TD
+   A[Start] --> B[Initialize variables and data structures]
+   B --> C[Input Generator Data]
+   C --> D["Read min & max capacities and cost coefficients (a, b, c)"]
+   D --> E[Input User Requirements]
+   E --> F[Read total power demand, tolerance, max iterations]
+   F --> G["Initialize Lambda (e.g. λ = 0.0)"]
+   G --> H{Repeat Until Converged or Max Iterations}
+   
+   H --> I[For each generator:<br>Compute power using λ and cost coefficients]
+   I --> J[Clamp power within min & max limits]
+   J --> K[Calculate total generated power]
+   K --> L{"Is |Total Power - Demand| < Tolerance?"}
+   
+   L -- Yes --> M["Converged: Exit Loop"]
+   L -- No --> N[Adjust Lambda based on error]
+   N --> H
+
+   M --> O[Output Results:<br>Final λ, Generator Outputs, Total Cost]
+   O --> P[End]
+
+```
